@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import RegisterPage from "../features/auth/RegisterPage.jsx";
+import RegisterPage from '../pages/Register/RegisterPage.jsx'
 import LoginPage from "../features/auth/LoginPage.jsx";
 
 const AppRoutes = () => {

@@ -17,7 +17,7 @@ function App() {
 
       {/* <div>StudioPulse</div> */}
 
-      {t("studiopulse")}
+      {/* {t("studiopulse")} */}
     </>
   );
 }

@@ -1,5 +1,26 @@
 {
   "studiopulse": "StudioPulse",
   "welcome": "Welcome to StudioPulse",
-  "register": "Register"
+  "register": "Register",
+  "form": {
+    "username": "Username",
+    "email": "Email",
+    "phoneNumber": "Phone Number",
+    "department": "Department",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "role": "Role"
+  
+  },
+  "departments": {
+    "vfx": "VFX",
+    "paint": "Paint",
+    "roto": "Roto"
+  },
+  "roles": {
+    "projectManager": "Project Manager",
+    "supervisor": "Supervisor",
+    "teamlead": "Team Lead",
+    "artist": "Artist"
+  }
 }

@@ -7,7 +7,7 @@ import i18n from "../i18n";
 
 function App() {
   const { t } = useTranslation();
-  console.log(i18n.language);
+  // console.log(i18n.language); //for testing  purpose  only
 
   return (
     <>

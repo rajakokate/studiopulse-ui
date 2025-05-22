@@ -12,7 +12,7 @@ i18n
   .use(HttpBackend)
   //init i18next
   .init({
-    debug: true,
+    debug: false,
     fallbackLng: "en",
     backend: {
         loadPath: '/locales/{{lng}}/translation.json'

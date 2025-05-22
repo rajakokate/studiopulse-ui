@@ -1,5 +1,21 @@
 {
   "studiopulse": "स्टूडियोपल्स",
   "welcome": "स्टूडियो पल्स में आपका स्वागत है",
-  "register": "रजिस्टर"
+  "register": "रजिस्टर",
+  "form": {
+    "username": "उपयोगकर्ता नाम",
+    "email": "ईमेल",
+    "phoneNumber": "फ़ोन नंबर",
+    "department": "विभाग",
+    "password": "पासवर्ड",
+    "confirmPassword": "पासवर्ड की पुष्टि क",
+    "role": "भूमिका",
+    "selectRole": "भूमिका का चयन करें"
+  },
+  "roles": {
+    "projectManager": "प्रोजेक्ट प्रबंधक",
+    "supervisor": "निगरानीकर्ता",
+    "teamlead": "टीम लीड",
+    "artist": "कला कार"
+  }
 }

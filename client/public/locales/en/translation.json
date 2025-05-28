@@ -10,7 +10,6 @@
     "password": "Password",
     "confirmPassword": "Confirm Password",
     "role": "Role"
-  
   },
   "departments": {
     "vfx": "VFX",
@@ -22,5 +21,17 @@
     "supervisor": "Supervisor",
     "teamlead": "Team Lead",
     "artist": "Artist"
+  },
+  "errors": {
+    "username": "Username is required",
+    "email": "Email is required",
+    "invalidEmail": "Invalid email format",
+    "phoneNumber": "Phone Number is required",
+    "password": "Password is required",
+    "passwordLength": "Password should be minimum 6 characters",
+    "confirmPassword": "Confirm password is required",
+    "confirmPasswordMatch": "Password mismatch",
+    "department": "Department is required",
+    "role": "Role is required"
   }
 }

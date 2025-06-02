@@ -25,7 +25,6 @@ const RegisterPage = () => {
       .required(t("errors.confirmPassword")),
     department: Yup.string().required(t("errors.department")),
     role: Yup.string().required(t("errors.role")),
-    groups: Yup.string().required(t("errors.group")),
   });
 
   const formik = useFormik({
@@ -37,9 +36,6 @@ const RegisterPage = () => {
       confirmPassword: "",
       department: "",
       role: "",
-      department: "",
-      role: "",
-      //Add more fields later (email, password, etc)
     },
     validationSchema,
     onSubmit: (values) => {
@@ -140,18 +136,7 @@ const RegisterPage = () => {
           ]}
         />
 
-        <SelectField
-          label={t("form.group")}
-          name="group"
-          value={formik.values.groups}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          error={formik.touched.group && formik.errors.group}
-          options={[
-            { value: "admin", label: t("groups.admin") },
-            { value: "lead", label: t("groups.lead") },
-          ]}
-        />
+        
         {/* 
         
         */}

@@ -15,7 +15,6 @@ function App() {
         <AppRoutes />
       </BrowserRouter>
 
-      {/* <div>StudioPulse</div> */}
 
       {/* {t("studiopulse")} */}
     </>

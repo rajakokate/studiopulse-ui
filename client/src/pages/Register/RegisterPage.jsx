@@ -1,14 +1,17 @@
-import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
+import React, { useState, useEffect } from "react";
+import { useTranslation, withTranslation } from "react-i18next";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import API from "../../utils/api";
 import InputField from "../../components/inputField";
 import SelectField from "../../components/SelectField";
 import styles from "./RegisterPage.module.css";
-
+import { useRoles } from "../../hooks/useRoles";
 const RegisterPage = () => {
   //initialize i18next app
   const { t } = useTranslation();
+
+  const roleOptions = useRoles(t);
 
   //Validation using Yup
   const validationSchema = Yup.object({
@@ -23,7 +26,7 @@ const RegisterPage = () => {
     confirmPassword: Yup.string()
       .oneOf([Yup.ref("password"), null], t("errors.confirmPasswordMatch"))
       .required(t("errors.confirmPassword")),
-    department: Yup.string().required(t("errors.department")),
+    // department: Yup.string().required(t("errors.department")),
     role: Yup.string().required(t("errors.role")),
   });
 
@@ -34,14 +37,28 @@ const RegisterPage = () => {
       phoneNumber: "",
       password: "",
       confirmPassword: "",
-      department: "",
+      // department: "",
       role: "",
     },
     validationSchema,
-    onSubmit: (values) => {
-      console.log("Submitted form", values);
+    onSubmit: async (values, { setSubmitting, setErrors, resetForm }) => {
+      try {
+        const response = await API.post("/studio-pulse/register/", values);
 
-      //API call later
+        //optionally display a success message
+        alert("Registration successful! Please log in.");
+
+        resetForm(); // clear form after success
+      } catch (error) {
+        if (error.response && error.response.data) {
+          //Backend returns specific errors
+          setErrors(error.response.data);
+        } else {
+          alert("Something went wrong. Try again  ");
+        }
+      } finally {
+        setSubmitting(false);
+      }
     },
   });
 
@@ -107,7 +124,8 @@ const RegisterPage = () => {
           placeholder={t("form.confirmPassword")}
         />
 
-        <SelectField
+        {/* temporary commenting out department  */}
+        {/* <SelectField
           label={t("form.department")}
           name="department"
           value={formik.values.department}
@@ -119,7 +137,7 @@ const RegisterPage = () => {
             { value: "paint", label: t("departments.paint") },
             { value: "roto", label: t("departments.roto") },
           ]}
-        />
+        /> */}
 
         <SelectField
           label={t("form.role")}
@@ -128,15 +146,9 @@ const RegisterPage = () => {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           error={formik.touched.role && formik.errors.role}
-          options={[
-            { value: "projectManager", label: t("roles.projectManager") },
-            { value: "supervisor", label: t("roles.supervisor") },
-            { value: "teamlead", label: t("roles.teamlead") },
-            { value: "artist", label: t("roles.artist") },
-          ]}
+          options={roleOptions}
         />
 
-        
         {/* 
         
         */}

@@ -1,0 +1,3 @@
+### Installed tailwind :
+
+```npm install -D tailwindcss postcss autoprefixer ```

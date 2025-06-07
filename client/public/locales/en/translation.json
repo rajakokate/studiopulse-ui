@@ -9,17 +9,27 @@
     "department": "Department",
     "password": "Password",
     "confirmPassword": "Confirm Password",
-    "role": "Role"
+    "role": "Role",
+    "group":"Group"
   },
   "departments": {
-    "vfx": "VFX",
+    "vfx": "CSE001",
     "paint": "Paint",
     "roto": "Roto"
   },
+  
   "roles": {
     "projectManager": "Project Manager",
     "supervisor": "Supervisor",
-    "teamlead": "Team Lead",
+    "teamlead": "Lead",
+    "artist": "Artist",
+    "admin": "Admin",
+    "lead": "Lead"
+  },
+  "groups": {
+    "admin": "Admin",
+    "lead": "Lead",
+    "supervisor": "Supervisor",
     "artist": "Artist"
   },
   "errors": {
@@ -32,6 +42,7 @@
     "confirmPassword": "Confirm password is required",
     "confirmPasswordMatch": "Password mismatch",
     "department": "Department is required",
-    "role": "Role is required"
+    "role": "Role is required",
+    "group": "Group is required"
   }
 }

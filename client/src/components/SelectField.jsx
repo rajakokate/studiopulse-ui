@@ -9,7 +9,7 @@ const SelectField = ({
   options,
   error,
 }) => {
-  console.log(options);
+  // console.log(options);
   return (
     <div className="input-group">
       <label htmlFor={name}>{label}</label>

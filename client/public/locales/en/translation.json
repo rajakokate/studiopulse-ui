@@ -10,21 +10,22 @@
     "password": "Password",
     "confirmPassword": "Confirm Password",
     "role": "Role",
-    "group":"Group"
+    "group": "Group"
   },
   "departments": {
     "vfx": "CSE001",
     "paint": "Paint",
     "roto": "Roto"
   },
-  
+
   "roles": {
     "projectManager": "Project Manager",
     "supervisor": "Supervisor",
     "teamlead": "Lead",
     "artist": "Artist",
     "admin": "Admin",
-    "lead": "Lead"
+    "lead": "Lead",
+    "manager": "Manager"
   },
   "groups": {
     "admin": "Admin",

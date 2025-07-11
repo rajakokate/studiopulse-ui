@@ -3,11 +3,20 @@ import { useTranslation, withTranslation } from "react-i18next";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import API from "../../utils/api";
+
 import InputField from "../../components/inputField";
 import SelectField from "../../components/SelectField";
 import { useRoles } from "../../hooks/useRoles";
+
+import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+
+
 const RegisterPage = () => {
+
+  // Initialize navigation
+  const navigate = useNavigate()
+
   //initialize i18next app
   const { t } = useTranslation();
 
@@ -56,9 +65,13 @@ const RegisterPage = () => {
         const response = await API.post("/studio-pulse/register/", payload);
 
         //optionally display a success message
-        toast.success("Registration successful! Please log in.")
+        toast.success("Registration successful! Please log in.");
 
         resetForm(); // clear form after success
+
+        navigate('/login')
+
+        
       } catch (error) {
         if (error.response && error.response.data) {
           //Backend returns specific errors
